@@ -1,0 +1,6 @@
+PyGithub
+pandas
+python-dotenv
+tqdm
+ipywidgets
+matplotlib
