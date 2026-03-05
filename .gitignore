@@ -2,3 +2,7 @@ Doc
 Output/
 .DS_Store
 .env
+
+# ...except the ones we want
+!Output/github_analysis.csv
+!Output/top_languages.png
