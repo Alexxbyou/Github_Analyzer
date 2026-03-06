@@ -63,7 +63,7 @@ def fetch_repos(user, include_forks: bool = False):
     return [r for r in all_repos if not r.fork]
 
 
-def analyze_repo(repo) -> dict:
+def analyze_repo(repo, owner_logins: set[str]) -> dict:
     """Collect all metrics for a single repository."""
     row = {
         "repo_name": repo.name,
@@ -79,7 +79,7 @@ def analyze_repo(repo) -> dict:
     # Branch count
     row["no_branches"] = len(list(repo.get_branches()))
 
-    # Contributor stats — sum ALL contributors (solo-developed repos)
+    # Contributor stats — only count logins in owner_logins
     row["commits_by_owner"] = 0
     row["lines_added"] = 0
     row["lines_deleted"] = 0
@@ -93,20 +93,32 @@ def analyze_repo(repo) -> dict:
 
     if stats:
         for contributor in stats:
-            row["commits_by_owner"] += contributor.total
-            row["lines_added"] += sum(w.a for w in contributor.weeks)
-            row["lines_deleted"] += sum(w.d for w in contributor.weeks)
+            login = contributor.author.login if contributor.author else None
+            if login in owner_logins:
+                row["commits_by_owner"] += contributor.total
+                row["lines_added"] += sum(w.a for w in contributor.weeks)
+                row["lines_deleted"] += sum(w.d for w in contributor.weeks)
 
-    # Activity dates (first & last commit, no author filter)
+    # Activity dates (first & last commit by owner logins)
     row["activity_start_date"] = None
     row["activity_end_date"] = None
 
     try:
-        commits = repo.get_commits()
-        total_commits = commits.totalCount
-        if total_commits > 0:
-            row["activity_end_date"] = commits[0].commit.author.date.strftime("%Y-%m-%d")
-            row["activity_start_date"] = commits[total_commits - 1].commit.author.date.strftime("%Y-%m-%d")
+        earliest = None
+        latest = None
+        for login in owner_logins:
+            commits = repo.get_commits(author=login)
+            if commits.totalCount > 0:
+                end_date = commits[0].commit.author.date
+                start_date = commits[commits.totalCount - 1].commit.author.date
+                if latest is None or end_date > latest:
+                    latest = end_date
+                if earliest is None or start_date < earliest:
+                    earliest = start_date
+        if earliest:
+            row["activity_start_date"] = earliest.strftime("%Y-%m-%d")
+        if latest:
+            row["activity_end_date"] = latest.strftime("%Y-%m-%d")
     except GithubException:
         pass  # empty repo
 
@@ -185,10 +197,14 @@ def main():
     # Authenticate
     g = Github(auth=Auth.Token(gh_token))
     user = g.get_user()
-    username = user.login
+
+    # Owner logins scope from .env
+    owner_logins_env = os.getenv("OWNER_LOGINS", "")
+    owner_logins = set(l.strip() for l in owner_logins_env.split(",") if l.strip()) if owner_logins_env.strip() else {user.login}
 
     rate = g.get_rate_limit().rate
-    print(f"Authenticated as: {username}")
+    print(f"Authenticated as: {user.login}")
+    print(f"Owner logins: {owner_logins}")
     print(f"Rate limit: {rate.remaining} / {rate.limit}")
 
     # Fetch repos
@@ -209,7 +225,7 @@ def main():
                 results.append(cached)
                 continue
 
-        row = analyze_repo(repo)
+        row = analyze_repo(repo, owner_logins)
         save_cache(cache_dir, repo.name, row)
         results.append(row)
         time.sleep(0.5)

@@ -2,6 +2,13 @@
 
 Analyzes all repositories under a GitHub account and produces a structured dataset summarizing activity, contribution volume, repository size, and technology stack for each repository.
 
+## Analysis Steps
+1. Setup & API Connection Test
+2. Retrieve Raw Repository List
+3. Identify All Contributors Across Repos (to identify local git user if relevant)
+4. Retrieve Contribution Data Per Repo
+5. Analysis, Build DataFrame & Export CSV
+
 ## Setup
 
 1. Create a conda environment and install dependencies:

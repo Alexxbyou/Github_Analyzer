@@ -1,35 +1,35 @@
 repo_name,visibility,tech_stack,repo_size_kb,activity_start_date,activity_end_date,activity_span_days,commits_by_owner,lines_added,lines_deleted,net_lines_of_code,no_branches,excl_line_counts
 project-035,private,"Python (52%), TypeScript (36%), Shell (8%)",37529,2025-09-11,2025-11-11,61.0,244,457900,318507,139393,7,False
-project-038,private,"Python (98%), Shell (1%), Dockerfile (0%)",18433,2022-09-08,2026-01-28,1238.0,200,127246,118537,8709,1,False
 project-024,private,"Swift (100%), Shell (0%)",11014,2025-12-19,2026-01-25,37.0,180,60509,33468,27041,1,False
 project-006,private,"Swift (100%), Ruby (0%)",5207,2024-10-03,2025-07-07,277.0,63,118075,64440,53635,2,False
 project-036,private,"Jupyter Notebook (72%), Python (16%), JavaScript (8%)",254,2025-09-11,2025-09-23,12.0,62,14597,11523,3074,2,False
-project-010,private,"Python (100%), Dockerfile (0%)",64921,2021-12-19,2026-01-28,1501.0,50,45638,2232,43406,1,False
 project-025,private,"JavaScript (57%), TypeScript (31%), CSS (12%)",713,2026-01-08,2026-01-11,3.0,26,23097,766,22331,2,False
 project-002,public,HTML (100%),253,2025-01-24,2025-06-19,146.0,21,275,194,81,1,False
 project-001,private,"Python (48%), Jupyter Notebook (46%), TypeScript (3%)",2644,2026-02-06,2026-02-09,3.0,20,12472,1709,10763,2,False
 project-034,private,"Jupyter Notebook (94%), Python (5%), HTML (1%)",409,2025-10-01,2026-01-18,109.0,18,48056,8992,39064,1,False
 project-014,private,R (100%),602,2024-08-28,2025-06-20,296.0,18,6611,2674,3937,1,False
-project-005,private,"HTML (65%), JavaScript (26%), R (9%)",66579,2025-04-15,2026-01-21,281.0,17,33370,27381,5989,2,False
+project-005,private,"HTML (65%), JavaScript (26%), R (9%)",66579,2025-06-02,2026-01-21,233.0,17,33370,27381,5989,2,False
 project-026,public,"JavaScript (88%), HTML (12%)",2007,2026-01-10,2026-01-21,11.0,13,1874,262,1612,1,False
 project-004,private,"Kotlin (80%), C (19%), C++ (1%)",94417,2025-06-13,2025-07-02,19.0,12,55574,1096,54478,2,False
 project-031,private,"Python (99%), Shell (1%)",96,2026-01-20,2026-01-25,5.0,11,8701,566,8135,1,False
 project-003,private,"Python (97%), Shell (3%)",89,2025-11-26,2025-11-27,1.0,10,7785,306,7479,1,False
-project-033,private,"Jupyter Notebook (87%), Python (13%)",75172,2025-04-07,2025-04-29,22.0,7,1918,247,1671,1,False
+project-033,private,"Jupyter Notebook (87%), Python (13%)",75172,2025-04-17,2025-04-29,12.0,7,1918,247,1671,1,False
+project-010,private,"Python (100%), Dockerfile (0%)",64921,2026-01-27,2026-01-28,1.0,6,446,6,440,1,False
 project-015,private,R (100%),76,2024-08-28,2025-06-21,297.0,6,3337,527,2810,1,False
-project-037,public,"HTML (94%), Jupyter Notebook (6%), Python (0%)",8064,2025-12-13,2025-12-14,1.0,5,429118,34,429084,1,False
-project-019,private,Jupyter Notebook (100%),734,2026-02-17,2026-02-18,1.0,5,5837,674,5163,1,False
 project-023,public,,528,2026-01-22,2026-01-23,1.0,5,50,3,47,1,False
+project-019,private,Jupyter Notebook (100%),734,2026-02-17,2026-02-18,1.0,5,5837,674,5163,1,False
+project-037,public,"HTML (94%), Jupyter Notebook (6%), Python (0%)",8064,2025-12-13,2025-12-14,1.0,5,429118,34,429084,1,False
 project-021,public,HTML (100%),3,2024-12-24,2024-12-24,0.0,4,3,1,2,1,False
 project-027,private,"Jupyter Notebook (100%), Python (0%)",8965,2026-01-19,2026-01-24,5.0,4,10459,307,10152,1,False
-project-028,private,"Jupyter Notebook (92%), Python (8%)",1297,2024-09-05,2025-04-11,218.0,2,65165,0,65165,1,False
-project-032,private,"Jupyter Notebook (96%), Python (4%), Shell (0%)",1959,2025-04-10,2025-04-24,14.0,2,4415,1274,3141,1,False
+project-038,private,"Python (98%), Shell (1%), Dockerfile (0%)",18433,2026-01-28,2026-01-28,0.0,3,268,30,238,1,False
+project-029,private,"Python (59%), Jupyter Notebook (41%)",188,2024-08-30,2024-08-30,0.0,2,10412,1,10411,1,False
 project-030,public,Jupyter Notebook (100%),56,2026-03-02,2026-03-02,0.0,2,2047,0,2047,1,False
-project-029,private,"Python (59%), Jupyter Notebook (41%)",188,2024-08-30,2025-04-11,224.0,2,10412,1,10411,1,False
+project-032,private,"Jupyter Notebook (96%), Python (4%), Shell (0%)",1959,2025-04-24,2025-04-24,0.0,2,4415,1274,3141,1,False
+project-028,private,"Jupyter Notebook (92%), Python (8%)",1297,2024-09-05,2024-09-05,0.0,2,65165,0,65165,1,False
 project-039,public,,27328,2025-04-23,2025-04-23,0.0,2,1,0,1,1,False
 project-016,private,"R (98%), Shell (1%), TeX (1%)",4,2025-05-06,2025-05-06,0.0,2,234,0,234,1,False
+project-013,public,"Jupyter Notebook (92%), Python (8%)",76,2026-03-04,2026-03-05,1.0,2,1591,1,1590,1,False
 project-012,private,"Python (84%), Shell (16%)",5,2026-01-27,2026-01-27,0.0,2,439,2,437,1,False
 project-007,private,"Jupyter Notebook (95%), Python (5%)",325,2025-07-02,2025-07-11,9.0,2,210456,98380,112076,1,False
 project-017,private,"Jupyter Notebook (82%), Python (18%)",20,2026-01-28,2026-01-28,0.0,1,2253,0,2253,1,False
-project-013,public,Jupyter Notebook (100%),41,2026-03-04,2026-03-04,0.0,1,1247,0,1247,1,False
 project-011,private,"Jupyter Notebook (80%), Python (20%)",21,2026-01-27,2026-01-27,0.0,1,2426,0,2426,1,False
